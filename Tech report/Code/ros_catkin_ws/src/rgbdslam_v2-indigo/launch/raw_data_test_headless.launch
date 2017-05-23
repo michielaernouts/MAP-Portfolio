@@ -1,0 +1,48 @@
+<!-- This file demonstrates online visual odometry. The graph optimization backend 
+     is only used to combine the motione estimates to several predecessor frames 
+
+     The visual odometry will be sent as the frame "/vodom" on the "/tf" topic.
+     
+     To get the cloud, you can subscribe to the online_cloud_out_topic (subsampled
+     according to cloud_creation_skip_step or to the original point cloud from the 
+     openni driver. 
+ -->
+<launch>
+<node pkg="rgbdslam" type="rgbdslam" name="rgbdslam" cwd="node" required="true" output="screen"> 
+	<!-- Input data settings-->
+		<param name="config/topic_image_mono"              value="/camera/rgb/image_raw"/> 
+		<param name="config/topic_image_depth"             value="/camera/depth/image_raw"/>
+		<param name="config/maximum_depth"         	value="6.0"/>
+		<param name="config/minimum_depth"         	value="0.8"/>
+		<param name="config/cloud_creation_skip_step"      value="16"/>
+
+		<param name="config/bagfile_name"      value="/home/michiel/bagfiles/real/v_building/v315/bag2/2017-04-28-13-41-23.bag"/>
+	<!-- Output data settings-->
+	
+	<!-- OctoMap data settings-->
+
+	<!-- TF information settings-->
+
+	<!-- Visual Features-->
+		<param name="config/feature_extractor_type"        value="SIFTGPU"/>
+		<param name="config/feature_detector_type"         value="SIFTGPU"/>
+		<param name="config/matcher_type"         	value="FLANN"/>
+
+		<param name="config/use_feature_mask"                   value="true"/>
+
+	<!-- Frontend settings -->
+		<param name="config/use_icp"         	value="true"/>
+		<param name="config/icp_method"         value="gicp"/>
+		<param name="config/g2o_transformation_refinement"         value="1"/>
+
+	<!-- Backend settings-->
+
+	<!-- Robot odometry options-->
+
+	<!-- Visualization Settings -->
+		<param name="/config/use_gui" value="false"/>
+	<!-- Misc -->
+
+	<!-- Debug-->
+</node>
+</launch>

@@ -1,0 +1,20 @@
+<package>
+  <description brief="cuda">
+
+     This package pulls in NVIDIA's CUDA toolkit, drivers and SDK.
+
+  </description>
+  <author>Ken Tossell/ktossell@umd.edu</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/cuda</url>
+  <depend package="rosbuild"/>
+  <export>
+    <rosbuild cmake_directory="${prefix}/cmake"/>
+		<cpp cflags="-I${prefix}/sdk/C/common/inc -I${prefix}/cuda/include" lflags="-L${prefix}/cuda/lib64 -L${prefix}/sdk/shared/lib -L${prefix}/sdk/C/lib -L/usr/lib/nvidia-current -lshrutil_x86_64 -lcutil_x86_64 -lcudart  -lcutil -lcuda -Wl,-rpath,${prefix}/lib"/>
+  </export>
+  <rosdep name="cuda-drivers"/>
+	
+</package>
+
+

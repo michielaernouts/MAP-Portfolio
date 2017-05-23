@@ -1,0 +1,5 @@
+<launch>
+<node name ="qt_rgbd_opengl" pkg="qt_rgbd_opengl" type="qt_rgbd_opengl" cwd="node" >
+</node> 
+<include file="$(find openni_camera)/launch/openni_node.launch" />
+</launch>

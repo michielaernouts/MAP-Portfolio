@@ -1,0 +1,18 @@
+<package>
+  <description brief="qt_rgbd_opengl">
+
+     qt_rgbd_opengl
+
+  </description>
+  <author>Frank Steinbrücker</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/qt_rgbd_opengl</url>
+  <depend package="std_msgs"/>
+  <depend package="geometry_msgs"/>
+  <depend package="cv_bridge"/>
+  <depend package="opencv2"/>
+  <depend package="roscpp"/>
+</package>
+
+

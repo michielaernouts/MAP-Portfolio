@@ -1,0 +1,9 @@
+--- convolution.cc.old	2011-04-19 19:03:27.500020806 +0200
++++ convolution.cc	2011-04-19 19:03:31.444397515 +0200
+@@ -1,5 +1,6 @@
+ #include "cvd/abs.h"
+ #include "cvd/convolution.h"
++#include <stdio.h>
+ using namespace std;
+ 
+ namespace CVD {

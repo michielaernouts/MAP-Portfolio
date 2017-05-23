@@ -1,0 +1,19 @@
+<package>
+  <description brief="libcvd">
+
+     libcvd
+
+  </description>
+  <author></author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/libcvd</url>
+  <depend package="toon"/>
+
+  <export>
+    <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib -lcvd -Wl,-rpath,${prefix}/lib"/>
+  </export>
+
+</package>
+
+

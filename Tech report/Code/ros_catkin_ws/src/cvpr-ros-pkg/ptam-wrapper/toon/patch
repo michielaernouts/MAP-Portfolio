@@ -1,0 +1,10 @@
+--- Makefile.old	2011-04-19 17:04:02.729951928 +0200
++++ Makefile	2011-04-19 17:04:07.542423760 +0200
+@@ -21,7 +21,6 @@
+ 	cp -r optimization $(hdr)/
+ 	cp -r internal $(hdr)/
+ 	cp -r functions $(hdr)/
+-	cp TooN.pc $(pkgconfig)/
+ 
+ internal/data_functions.hh:  make_data_functions.awk
+ 	awk -f make_data_functions.awk > $@

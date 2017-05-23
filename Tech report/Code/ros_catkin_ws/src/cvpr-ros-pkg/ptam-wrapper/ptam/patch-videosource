@@ -1,0 +1,11 @@
+--- Makefile.old	2011-04-20 15:05:53.481261000 +0200
++++ Makefile	2011-04-20 15:07:09.901725000 +0200
+@@ -8,7 +8,7 @@
+ LINKFLAGS = $(EXTRA_LFLAGS) -lGVars3 -lcvd
+ 
+ # Edit this line to change video source
+-VIDEOSOURCE = VideoSource_Linux_DV.o
++VIDEOSOURCE = VideoSource_Linux_DV8Bit.o
+ 
+ OBJECTS=	main.o\
+ 		GLWindow2.o\

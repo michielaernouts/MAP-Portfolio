@@ -1,0 +1,14 @@
+<launch>
+   <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher" args="4 2 0 -3.14 0 0 /map /mocap 100"/>
+  <node pkg="fake_localization" type="fake_localization" name="fake_localization">
+    <remap from="base_pose_ground_truth" to="mocap" />
+    <param name="base_frame_id" value="Torso_link" />
+    <param name="delta_x" value="0.0" />
+    <param name="delta_y" value="0.0" />
+    <param name="delta_yaw" value="0.0" />
+  </node>
+  <node pkg="cortex_stream" type="cortex_stream" name="cortex_stream" output="screen"/>
+  <!-- <node name="static_transform_publisher" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 map odom 40" /> -->
+  
+
+</launch>

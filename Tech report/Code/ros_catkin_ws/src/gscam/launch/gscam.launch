@@ -1,0 +1,11 @@
+<launch>
+    <arg name="DEVICE" default="/dev/video1"/>
+    <!-- The GStreamer framerate needs to be an integral fraction -->
+    <arg name="FPS" default="30/1"/>
+
+    <node pkg="gscam" type="gscam" name="gscam">
+        <remap from="camera/image_raw" to="camera/image" />
+        <param name="camera_info_url" value="package://gscam/examples/uncalibrated_parameters.ini"/>
+        <param name="gscam_config" value="v4l2src device=$(arg DEVICE) ! video/x-raw-rgb,framerate=$(arg FPS) ! ffmpegcolorspace"/>
+    </node>
+</launch>

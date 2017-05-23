@@ -1,0 +1,7 @@
+
+<launch>
+	ROS_INFO("");
+	<include file="$(find freenect_launch)/launch/freenect.launch" output="screen"/>
+	<include file="$(find kinect_transformer)/launch/transformer.launch"/>
+	<include file="$(find rgbdslam)/launch/raw_data_test.launch"/>
+</launch>

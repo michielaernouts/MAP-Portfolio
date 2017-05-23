@@ -1,0 +1,16 @@
+<package>
+  <description brief="cuda_tests">
+
+     Simple CUDA tests to demonstrate that CUDA works in a ROS node
+
+  </description>
+  <author>Ken Tossell/ktossell@umd.edu</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/cuda_tests</url>
+  <depend package="cuda"/>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+</package>
+
+

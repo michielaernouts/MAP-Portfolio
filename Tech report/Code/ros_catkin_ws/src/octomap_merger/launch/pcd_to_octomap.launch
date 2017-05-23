@@ -1,0 +1,21 @@
+
+<launch>
+	<param name="/use_sime_time" value="true"/>
+
+	<!-- when RGB-D SLAM base_frame_name is /base_link -->
+	<node pkg="tf" type="static_transform_publisher" name="initial_map_2_map" args="0 0 0 0 0 -2.35 /map /initial_map 10"/>
+
+<node pkg="pcl_ros" type="pcd_to_pointcloud" name="initial_pointcloud_publisher" args="/home/michiel/recordings/LSD_SLAM/lsd_slam_demo_result.pcd">-->
+	<remap from="/cloud_pcd" to="/cloud_in" />
+	<param name="frame_id" type="string" value="/initial_map" />
+</node>
+
+<node pkg="octomap_server" type="octomap_server_node" name="octomap_server">
+    <param name="resolution" value="0.05" />
+		
+	<!-- fixed map frame (set to 'map' if SLAM or localization running!) -->
+	<param name="frame_id" type="string" value="/map" />
+	<param name="filter_ground" value="false" /><!-- who knows where the floor is? -->
+    <param name="base_frame_id" value="/map" /> <!--needs to be set, even if not used-->
+</node>
+</launch>

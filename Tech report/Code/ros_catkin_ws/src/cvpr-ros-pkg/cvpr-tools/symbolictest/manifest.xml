@@ -1,0 +1,15 @@
+<package>
+  <description brief="symbolictest">
+
+     symbolictest
+
+  </description>
+  <author>Juergen Sturm</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/symbolictest</url>
+  <depend package="symboliccpp"/>
+
+</package>
+
+

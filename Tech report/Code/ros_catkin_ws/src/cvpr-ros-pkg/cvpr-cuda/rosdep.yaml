@@ -1,0 +1,24 @@
+# Choosing the "developer" drivers here; any recent hardware-appropriate
+# NV driver should work
+cuda-drivers:
+  ubuntu: |
+    version=285.05.33
+    if [ ! -f /usr/lib/libnvidia-compiler.so.${version} ]; then
+      arch=`arch`
+      if [ "x86_64" = "$arch" ]; then
+        bits=x86_64
+      else
+        bits=x86
+      fi
+      mkdir -p $ROS_ROOT/../ros-deps
+      cd $ROS_ROOT/../ros-deps
+      wget -nc --tries=10 http://developer.download.nvidia.com/compute/cuda/4_1/rel/drivers/NVIDIA-Linux-${bits}-${version}.run
+      sudo bash NVIDIA-Linux-${bits}-${version}.run
+      rm -f NVIDIA-Linux-${bits}-${version}.run
+      cd ..
+      rmdir --ignore-fail-on-non-empty ros-deps
+    fi
+gcc-4.4:
+  ubuntu: gcc-4.4
+g++-4.3:
+  ubuntu: g++-4.4

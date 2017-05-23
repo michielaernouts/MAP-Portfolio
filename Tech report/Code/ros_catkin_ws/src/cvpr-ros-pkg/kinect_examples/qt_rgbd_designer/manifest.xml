@@ -1,0 +1,24 @@
+<package>
+  <description brief="cudatest01">
+
+     cudatest01
+
+  </description>
+  <author>Frank Steinbruecker</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/cudatest01</url>
+  <depend package="visualization_msgs"/>
+  <depend package="std_msgs"/>
+  <depend package="geometry_msgs"/>
+  <depend package="cv_bridge"/>
+  <depend package="opencv2"/>
+  <depend package="sensor_msgs"/>
+  <depend package="tf_conversions"/>
+  <depend package="tf"/>
+	<depend package="cuda"/>
+  <depend package="roscpp"/>
+
+</package>
+
+

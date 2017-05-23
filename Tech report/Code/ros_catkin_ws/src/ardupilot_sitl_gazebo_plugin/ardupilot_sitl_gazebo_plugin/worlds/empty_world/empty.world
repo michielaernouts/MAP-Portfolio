@@ -1,0 +1,648 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <world name="vrc_task_1">
+    <!-- place user camera -->
+    <gui>
+      <camera name="user_camera">
+        <pose>-21.660200 -11.942800 12.053900 0.000000 0.443643 0.352194</pose>
+      </camera>
+    </gui>
+    <scene>
+      <ambient>0.5 0.5 0.5 1.0</ambient>
+      <grid>true</grid>
+      <sky>
+        <clouds>
+          <speed>4</speed>
+        </clouds>
+      </sky>
+    </scene>
+    <physics type="ode">
+      <gravity>0 0 -9.81</gravity>
+      <ode>
+        <solver>
+          <use_dynamic_moi_rescaling>true</use_dynamic_moi_rescaling>
+          <type>quick</type>
+          <iters>50</iters>
+	  <!-- Must be 1.0 ! Not any above number -->
+          <sor>1.0</sor>
+        </solver>
+        <constraints>
+          <cfm>0.0</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>100.0</contact_max_correcting_vel>
+          <contact_surface_layer>0.0</contact_surface_layer>
+        </constraints>
+      </ode>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+    </physics>
+
+    <!-- Light Source -->
+
+
+    <!-- Light sources simulation A (erle world)-->
+    <light type="directional" name="directional1">
+      <cast_shadows>true</cast_shadows>
+      <pose>3.5 -4 6 0 0.7 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.09 0.09 0.09 1</specular>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.00</quadratic>
+      </attenuation>
+    </light>
+
+    <light type="point" name="point1">
+      <cast_shadows>true</cast_shadows>
+      <pose>-12 9 8 0 0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.09 0.09 0.09 1</specular>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.00</quadratic>
+      </attenuation>
+    </light>
+
+    
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://erle</uri>
+      <pose>-10 -5 0 0 0 0</pose>
+    </include>
+
+<!--
+    <include>
+      <uri>model://fast_food</uri>
+        <pose>0 -8 0 0 -0 3.14</pose>
+    </include>
+    <include>
+      <uri>model://house_2</uri>
+        <pose>-9 0 0 0 -0 -1.5707</pose>
+    </include>
+
+    <include>
+      <uri>model://sample_wall2</uri>
+      <static>true</static>
+      <name>sample_wall2_1</name>
+      <pose>6 5 0 0 -0 0</pose>
+    </include>
+
+    <road name="main_street">
+      <width>1</width>
+      <point>0 0 0.01</point>
+      <point>16 0 0.01</point>
+      <point>17 -1 0.01</point>
+      <point>17 -6 0.01</point>
+    </road>
+-->
+
+  <model name ='spheres'>
+        <pose>0 0 0 0 0 0</pose>
+
+        <link name ='sphere1'>
+          <pose>-3 0 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+	    <material>
+	    	<ambient>1 0 0 1</ambient>
+	    	<diffuse>1 0 0 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='sphere2'>
+          <pose>-6 0 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+	    <material>
+	    	<ambient>0 1 0 1</ambient>
+	    	<diffuse>0 1 0 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='sphere3'>
+          <pose>-9 0 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+	    <material>
+	    	<ambient>0 0 1 1</ambient>
+	    	<diffuse>0 0 1 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='sphere4'>
+          <pose>-12 0 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+	    <material>
+	    	<ambient>0 1 1 1</ambient>
+	    	<diffuse>0 1 1 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='sphere5'>
+          <pose>-13 -2 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+	    <material>
+	    	<ambient>1 1 0 1</ambient>
+	    	<diffuse>1 1 0 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='sphere6'>
+          <pose>-14 -4 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+	    <material>
+	    	<ambient>0.2 0 0.6 1</ambient>
+	    	<diffuse>0.2 0 0.6 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='sphere7'>
+          <pose>-13 -6 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+	    <material>
+	    	<ambient>0.5 1 0 1</ambient>
+	    	<diffuse>0.5 1 0 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='sphere8'>
+          <pose>3 2 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+	    <material>
+	    	<ambient>0.5 1 0 1</ambient>
+	    	<diffuse>0.5 1 0 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='sphere9'>
+          <pose>3.5 -3.5 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+	    <material>
+	    	<ambient>0.5 0.5 0.8 1</ambient>
+	    	<diffuse>0.5 0.5 0.8 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='sphere10'>
+	  <gravity>0 0 9.81</gravity>
+          <pose>-14.5 1.5 1 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+	    <material>
+	    	<ambient>0.2 1 0.4 1</ambient>
+	    	<diffuse>0.2 1 0.4 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='sphere11'>
+          <pose>-2.2 -8.5 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+	    <material>
+	    	<ambient>0.4 0.5 0.2 1</ambient>
+	    	<diffuse>0.4 0.5 0.2 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='sphere12'>
+	<gravity>0 0 9.81</gravity>
+          <pose>-14.5 -3.5 1.5 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+	    <material>
+	    	<ambient>0.2 0 0.6 1</ambient>
+	    	<diffuse>0.2 0 0.6 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='sphere13'>
+          <pose>-1.5 -2.5 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+	    <material>
+	    	<ambient>0.6 0.2 0.4 1</ambient>
+	    	<diffuse>0.4 0.2 0.4 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='sphere14'>
+          <pose>-14 0.5 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+	    <material>
+	    	<ambient>0.8 0.4 0.2 1</ambient>
+	    	<diffuse>0.8 0.4 0.2 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='sphere15'>
+          <pose>-1.5 2 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <sphere><radius>0.5</radius></sphere>
+            </geometry>
+	    <material>
+	    	<ambient>0.1 0.7 0.4 1</ambient>
+	    	<diffuse>0.1 0.7 0.4 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+    </model>
+
+    <model name ='cylinders'>
+        <pose>0 0 0 0 0 0</pose>
+
+        <link name ='cyl1'>
+          <pose>-3.5 -2 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <cylinder><radius>0.5</radius></cylinder>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <cylinder><radius>0.5</radius></cylinder>
+            </geometry>
+	    <material>
+	    	<ambient>0 0.5 0.5 1</ambient>
+	    	<diffuse>0 0.5 0.5 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='cyl2'>
+          <pose>-4 3 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <cylinder><radius>0.5</radius></cylinder>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <cylinder><radius>0.5</radius></cylinder>
+            </geometry>
+	    <material>
+	    	<ambient>0.5 0 0.5 1</ambient>
+	    	<diffuse>0.5 0 0.5 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='cyl3'>
+          <pose>-12 3 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <cylinder><radius>0.5</radius></cylinder>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <cylinder><radius>0.5</radius></cylinder>
+            </geometry>
+	    <material>
+	    	<ambient>0.2 1 0.5 1</ambient>
+	    	<diffuse>0.2 1 0.5 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='cyl4'>
+          <pose>-2 -6 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <cylinder><radius>0.5</radius></cylinder>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <cylinder><radius>0.5</radius></cylinder>
+            </geometry>
+	    <material>
+	    	<ambient>1 0 0 1</ambient>
+	    	<diffuse>1 0 0 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='cyl5'>
+          <pose>-1 -11 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <cylinder><radius>0.5</radius></cylinder>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <cylinder><radius>0.5</radius></cylinder>
+            </geometry>
+	    <material>
+	    	<ambient>0 1 0 1</ambient>
+	    	<diffuse>0 1 0 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='cyl6'>
+          <pose>3.5 -11 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <cylinder><radius>0.5</radius></cylinder>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <cylinder><radius>0.5</radius></cylinder>
+            </geometry>
+	    <material>
+	    	<ambient>0 1 1 1</ambient>
+	    	<diffuse>0 1 1 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='cyl7'>
+          <pose>-8 2.5 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <cylinder><radius>0.5</radius></cylinder>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <cylinder><radius>0.5</radius></cylinder>
+            </geometry>
+		<material>
+	    	<ambient>1 1 0 1</ambient>
+	    	<diffuse>1 1 0 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='cyl8'>
+          <pose>-8 -2.5 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <cylinder><radius>0.5</radius></cylinder>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <cylinder><radius>0.5</radius></cylinder>
+            </geometry>
+		<material>
+	    	<ambient>0.2 1 0.4 1</ambient>
+	    	<diffuse>0.2 1 0.4 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+    </model>
+
+   <model name ='cubes'>
+        <pose>0 0 0 0 0 0</pose>
+
+        <link name ='cube1'>
+          <pose>1 -5 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <box><size>1 1 1</size></box>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <box><size>1 1 1</size></box>
+            </geometry>
+	    <material>
+	    	<ambient>0.3 0.4 0.7 1</ambient>
+	    	<diffuse>0.3 0.4 0.7 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='cube2'>
+          <pose>2 -2.5 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <box><size>1 1 1</size></box>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <box><size>1 1 1</size></box>
+            </geometry>
+	    <material>
+	    	<ambient>0.8 0.4 0.2 1</ambient>
+	    	<diffuse>0.8 0.4 0.2 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+
+        <link name ='cube3'>
+          <pose>1.5 -12 0 0 0 0</pose>
+          <collision name ='collision'>
+            <geometry>
+              <box><size>1 1 1</size></box>
+            </geometry>
+          </collision>
+          <visual name ='visual'>
+            <geometry>
+              <box><size>1 1 1</size></box>
+            </geometry>
+	    <material>
+	    	<ambient>0.3 0.8 0.1 1</ambient>
+	    	<diffuse>0.3 0.8 0.1 1</diffuse>
+	    	<specular>0.1 0.1 0.1 1</specular>
+	    	<emissive>0 0 0 0</emissive>
+	    </material>
+          </visual>
+        </link>
+</model>
+
+    <!-- TODO: TRANSFORM IT INTO A VARIABLE DEFINED IN THE .launch FILE
+         OR ELSE WE WILL ALWAYS FORGET IT IS HERE !!! -->
+
+
+    <plugin name="ardupilot_sitl_gazebo_plugin" filename="libardupilot_sitl_gazebo_plugin.so">
+    <UAV_MODEL>erlecopter</UAV_MODEL>
+    </plugin>
+  </world>
+</sdf>

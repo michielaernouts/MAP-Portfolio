@@ -1,0 +1,11 @@
+--- configure.old	2011-04-19 19:02:42.355908412 +0200
++++ configure	2011-04-19 19:02:46.199907043 +0200
+@@ -4299,7 +4299,7 @@
+ echo $ECHO_N "checking ... $ECHO_C" >&6; }
+ 	fi
+ 	save_CXXFLAGS="$CXXFLAGS"
+-	CXXFLAGS="$CXXFLAGS -Wextra"
++	CXXFLAGS="$CXXFLAGS -Wextra -fomit-frame-pointer"
+ 
+ 
+ 

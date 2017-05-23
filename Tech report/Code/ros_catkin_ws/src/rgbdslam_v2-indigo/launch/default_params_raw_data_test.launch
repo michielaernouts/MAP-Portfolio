@@ -1,0 +1,17 @@
+<!-- This file demonstrates online visual odometry. The graph optimization backend 
+     is only used to combine the motione estimates to several predecessor frames 
+
+     The visual odometry will be sent as the frame "/vodom" on the "/tf" topic.
+     
+     To get the cloud, you can subscribe to the online_cloud_out_topic (subsampled
+     according to cloud_creation_skip_step or to the original point cloud from the 
+     openni driver. 
+ -->
+<launch>
+<node pkg="rgbdslam" type="rgbdslam" name="rgbdslam" cwd="node" required="true" output="screen"> 
+	    <!-- Input data settings-->
+	    <param name="config/topic_image_mono"              value="/camera/rgb/image_raw"/> 
+	   <!-- <param name="config/topic_image_depth"             value="/camera/depth_registered/sw_registered/image_rect_raw"/>-->
+            <param name="config/topic_image_depth"             value="/camera/depth/image_raw"/>
+	  </node>
+</launch>

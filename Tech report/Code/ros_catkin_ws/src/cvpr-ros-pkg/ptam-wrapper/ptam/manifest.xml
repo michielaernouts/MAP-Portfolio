@@ -1,0 +1,17 @@
+<package>
+  <description brief="ptam">
+
+     ptam
+
+  </description>
+  <author></author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ptam</url>
+  <depend package="toon"/>
+  <depend package="libcvd"/>
+  <depend package="gvars3"/>
+
+</package>
+
+

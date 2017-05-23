@@ -1,0 +1,11 @@
+--- Makefile.old	2011-04-19 17:31:49.959937022 +0200
++++ Makefile	2011-04-19 17:32:00.319893807 +0200
+@@ -221,7 +221,7 @@
+ 
+ install-static: $(archive) $(Harchive)
+ 	mkdir -p $(DESTDIR)/$(libdir)
+-	cp $(archive) $(Harchive) $(dharchive) $(darchive) $(DESTDIR)/$(libdir)
++	cp $(archive) $(Harchive) $(DESTDIR)/$(libdir)
+ 
+ install-shared-normal: $(soname) 
+ 	mkdir -p $(DESTDIR)/$(libdir)

@@ -1,0 +1,9 @@
+<stack>
+  <description brief="rgbd_benchmark">rgbd_benchmark</description>
+  <author>Maintained by Juergen Sturm</author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/rgbd_benchmark</url>
+  <depend stack="ros" />
+
+</stack>

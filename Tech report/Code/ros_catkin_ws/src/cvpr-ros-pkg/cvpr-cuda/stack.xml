@@ -1,0 +1,11 @@
+<stack>
+  <description brief="GPGPU support">
+    Tools for using GPU computing technology in ROS nodes.
+  </description>
+  <author>Ken Tossell</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/gpgpu</url>
+  <depend stack="ros" />
+
+</stack>

@@ -1,0 +1,13 @@
+--- Makefile.old	2011-04-19 17:40:09.359977113 +0200
++++ Makefile	2011-04-19 17:40:34.850147233 +0200
+@@ -4,8 +4,8 @@
+ # Edit the lines below to point to any needed include and link paths
+ # Or to change the compiler's optimization flags
+ CC = g++
+-COMPILEFLAGS = -I MY_CUSTOM_INCLUDE_PATH -D_LINUX -D_REENTRANT -Wall  -O3 -march=nocona -msse3
+-LINKFLAGS = -L MY_CUSTOM_LINK_PATH -lGVars3 -lcvd
++COMPILEFLAGS = $(EXTRA_CFLAGS) -D_LINUX -D_REENTRANT -Wall  -O3 -march=nocona -msse3
++LINKFLAGS = $(EXTRA_LFLAGS) -lGVars3 -lcvd
+ 
+ # Edit this line to change video source
+ VIDEOSOURCE = VideoSource_Linux_DV.o

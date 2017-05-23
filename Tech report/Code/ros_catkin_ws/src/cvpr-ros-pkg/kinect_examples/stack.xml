@@ -1,0 +1,9 @@
+<stack>
+  <description brief="kinect_examples">kinect_examples</description>
+  <author>Maintained by Frank Steinbruecker</author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/kinect_examples</url>
+  <depend stack="ros" />
+
+</stack>

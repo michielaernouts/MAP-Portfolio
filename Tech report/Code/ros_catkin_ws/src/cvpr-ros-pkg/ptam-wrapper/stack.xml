@@ -1,0 +1,9 @@
+<stack>
+  <description brief="ptam-wrapper">ptam-wrapper</description>
+  <author>Maintained by </author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ptam-wrapper</url>
+  <depend stack="ros" />
+
+</stack>

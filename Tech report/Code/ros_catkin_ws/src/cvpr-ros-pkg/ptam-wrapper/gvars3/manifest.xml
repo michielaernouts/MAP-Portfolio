@@ -1,0 +1,19 @@
+<package>
+  <description brief="gvars3">
+
+     gvars3
+
+  </description>
+  <author></author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/gvars3</url>
+  <depend package="toon"/>
+
+  <export>
+    <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib -lGVars3 -Wl,-rpath,${prefix}/lib"/>
+  </export>
+
+</package>
+
+

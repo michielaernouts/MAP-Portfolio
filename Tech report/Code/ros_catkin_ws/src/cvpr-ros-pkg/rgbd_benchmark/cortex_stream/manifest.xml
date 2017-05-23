@@ -1,0 +1,17 @@
+<package>
+  <description brief="cortex_stream">
+
+     cortex_stream
+
+  </description>
+  <author>maierd</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/cortex_stream</url>
+  <depend package="roscpp"/>
+  <depend package="tf"/>
+  <depend package="visualization_msgs"/>
+
+</package>
+
+
